@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>end</name>
+    <events>
+        <event-block sid="271204047102529">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="571444717592664" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="730661994301512" type="fontttt2">
+                    <param id="0" name="Text">wrong</param>
+                </action>
+                <action id="0" name="Set text" sid="124261980292270" type="fontttt3">
+                    <param id="0" name="Text">finish</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="277951525037037">
+            <conditions>
+                <condition id="3" name="On touched object" sid="200056920745885" type="Touch">
+                    <param id="0" name="Object">btnhome</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="164709971655718" type="System">
+                    <param id="0" name="Layout">main</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

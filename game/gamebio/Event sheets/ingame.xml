@@ -1,0 +1,3573 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>ingame</name>
+    <events>
+        <variable constant="0" name="finish" sid="912889375816167" static="0" type="number">0</variable>
+        <variable constant="0" name="timer" sid="340699593133486" static="0" type="number">0</variable>
+        <variable constant="0" name="yset" sid="449322603412435" static="0" type="number">712</variable>
+        <variable constant="0" name="xset" sid="621857069519365" static="0" type="number">205</variable>
+        <variable constant="0" name="wrong" sid="413687811468362" static="0" type="number">0</variable>
+        <event-block sid="135515640145346">
+            <conditions>
+                <condition id="2" name="Key is down" sid="431435834397199" type="Keyboard">
+                    <param id="0" name="Key">37</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="591194641807239" type="boat1">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="847022617661550">
+            <conditions>
+                <condition id="2" name="Key is down" sid="902336932375170" type="Keyboard">
+                    <param id="0" name="Key">39</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="280411819491759" type="boat1">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="655312167823145">
+            <conditions>
+                <condition id="2" name="Key is down" sid="678084588495673" type="Keyboard">
+                    <param id="0" name="Key">65</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="227248931321220" type="bom2">
+                    <param id="0" name="Control">0</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="796151795884577" type="bom2">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="918954886509469">
+            <conditions>
+                <condition id="2" name="Key is down" sid="192163055025308" type="Keyboard">
+                    <param id="0" name="Key">87</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="936528659800583" type="bom2">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="599007313183250">
+            <conditions>
+                <condition id="2" name="Key is down" sid="678986824611685" type="Keyboard">
+                    <param id="0" name="Key">68</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="600298605726609" type="bom2">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action behavior="Platform" id="7" name="Simulate control" sid="720499328680882" type="bom2">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="665255302612104">
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" sid="269016171116368" type="boat1" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="450351954581265">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="914253119341932" type="boat1" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="376657657922798" type="boat1">
+                            <param id="0" name="Animation">&quot;run&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="373150602725633">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="586235015913772" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="317805185084868" type="boat1">
+                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="106152116462152">
+            <conditions>
+                <condition behavior="Platform" id="8" name="On moved" sid="192262224962586" type="boat1" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="673165017247967" type="boat1">
+                    <param id="0" name="Animation">&quot;run&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="441423307675756">
+            <conditions>
+                <condition behavior="Platform" id="7" name="On stopped" sid="604121807597337" type="boat1" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="210930026183102" type="boat1">
+                    <param id="0" name="Animation">&quot;idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="273313796021825">
+            <conditions>
+                <condition behavior="Platform" id="5" name="On jump" sid="589986238503899" type="boat1" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="684781214513624" type="boat1">
+                    <param id="0" name="Animation">&quot;jump&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Play" sid="921092474160283" type="Audio">
+                    <param id="0" name="Audio file">jump</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">115</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="947916058492658">
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" sid="141682912282938" type="bom2" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="746488033770570">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="945667305045504" type="bom2" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="864268434225593" type="bom2">
+                            <param id="0" name="Animation">&quot;run&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="704636689733952">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="598025589628781" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="211378600016755" type="bom2">
+                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="136594457033724">
+            <conditions>
+                <condition behavior="Platform" id="8" name="On moved" sid="610938723311597" type="bom2" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="819491395160462" type="bom2">
+                    <param id="0" name="Animation">&quot;run&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="456638827303118">
+            <conditions>
+                <condition behavior="Platform" id="7" name="On stopped" sid="157152517844861" type="bom2" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="617129741677040" type="bom2">
+                    <param id="0" name="Animation">&quot;idle&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="331299709042280">
+            <conditions>
+                <condition behavior="Platform" id="5" name="On jump" sid="697412146993091" type="bom2" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="765412422681728" type="bom2">
+                    <param id="0" name="Animation">&quot;jump&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Play" sid="945480407206202" type="Audio">
+                    <param id="0" name="Audio file">jump</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">115</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="443670705097205">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="354830539768911" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="146707841021033">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="800215722681243" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="474514875011580" type="textname1">
+                            <param id="0" name="Text">name1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="467294288371984" type="textname2">
+                            <param id="0" name="Text">name2</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="204193442646734" type="textname1">
+                            <param id="0" name="X">boat1.X</param>
+                            <param id="1" name="Y">boat1.Y-128</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="663429330025978" type="textname2">
+                            <param id="0" name="X">bom2.X</param>
+                            <param id="1" name="Y">bom2.Y-128</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="404503520369643">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="632720826316475" type="boat1">
+                    <param id="0" name="Object">Sprite11</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="731142255927389" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="729679806983412" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="910798292400665" type="boat1" />
+                <action id="-9" name="Destroy" sid="289542267178147" type="bom2" />
+                <action id="-16" name="Wait" sid="330364547712609" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="794443126705971" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="858079283073701" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="468135186400024">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="634439355900557" type="boat1">
+                    <param id="0" name="Object">thorn1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="620252694233614" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="607283240590938" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="118588359721006" type="boat1" />
+                <action id="-9" name="Destroy" sid="136750652064590" type="bom2" />
+                <action id="-16" name="Wait" sid="895723253117477" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="440918743053235" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="261517686729812" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="174013801285504">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="662806340848813" type="boat1">
+                    <param id="0" name="Object">tt</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="121151879033976" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="212199502288195" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="806212942890742" type="boat1" />
+                <action id="-9" name="Destroy" sid="861599642130077" type="bom2" />
+                <action id="-16" name="Wait" sid="856537719447771" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="422937939132976" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="783109523123853" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="635232664338512">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="890982613772457" type="bom2">
+                    <param id="0" name="Object">thorn1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="899042471351845" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="400899337698149" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="513835541861657" type="boat1" />
+                <action id="-9" name="Destroy" sid="585281836487398" type="bom2" />
+                <action id="-16" name="Wait" sid="972075797522563" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="551449763046067" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="692707180327959" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="106745625402431">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="408320592813017" type="bom2">
+                    <param id="0" name="Object">Sprite11</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="704572862286428" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="582587532924926" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="120834920240615" type="boat1" />
+                <action id="-9" name="Destroy" sid="734868482553336" type="bom2" />
+                <action id="-16" name="Wait" sid="661299104410538" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="583921813780630" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="960883890736976" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="807481013544175">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="612914608803003" type="bom2">
+                    <param id="0" name="Object">tt</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="261863162800367" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="413263279608520" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="830245466069874" type="boat1" />
+                <action id="-9" name="Destroy" sid="345660274974258" type="bom2" />
+                <action id="-16" name="Wait" sid="260085936684147" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="401708325635137" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="102046542043623" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="771501300234507">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="327838255219937" type="boat1">
+                    <param id="0" name="Object">tab1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="876453364472485" type="boock1" />
+            </actions>
+        </event-block>
+        <event-block sid="815387089254108">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="301455207993967" type="bom2">
+                    <param id="0" name="Object">tab1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="635192987684473" type="boock1" />
+            </actions>
+        </event-block>
+        <event-block sid="982113331814231">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="403395277031058" type="boat1">
+                    <param id="0" name="Object">tab2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="845206536935770" type="boock" />
+            </actions>
+        </event-block>
+        <event-block sid="972093433979487">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="473692595341948" type="bom2">
+                    <param id="0" name="Object">tab2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="423731050605825" type="boock" />
+            </actions>
+        </event-block>
+        <event-block sid="256450055975633">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="476529580984560" type="boat1">
+                    <param id="0" name="Object">ll1</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="322308909953563" type="ll1" />
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="799964501064267" type="bom2">
+                    <param id="0" name="Object">tabL1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="547740794064865" type="ll1">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="637507827848460" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="312072014446853" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="357872826866141" type="boat1" />
+                <action id="-9" name="Destroy" sid="674436665239331" type="bom2" />
+                <action id="-16" name="Wait" sid="473906606512148" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="240572613240716" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="330048332719024" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="608958063472307">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="590977816484990" type="bom2">
+                    <param id="0" name="Object">ll1</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="761220460696976" type="ll1" />
+                <condition id="1" inverted="1" name="Is overlapping another object" sid="315391269579832" type="boat1">
+                    <param id="0" name="Object">tabL1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="336318970345077" type="ll1">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="107257122493289" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="131468484697344" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="808076796387473" type="boat1" />
+                <action id="-9" name="Destroy" sid="209591770588378" type="bom2" />
+                <action id="-16" name="Wait" sid="331364651232715" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="832451080872658" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="750182358949000" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="389806420998632">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="156200961494418" type="boat1">
+                    <param id="0" name="Object">tabL1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="750931629743295" type="ll1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="740915879359670" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="138234376648212" type="ll1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="967937655280964">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="947024213822108" type="bom2">
+                    <param id="0" name="Object">tabL1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="474728738122555" type="ll1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="741861198688031" type="System">
+                    <param id="0" name="Seconds">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="635132197205405" type="ll1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="793605934068417">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="734633723768453" type="boat1">
+                    <param id="0" name="Object">tabL2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="792510814165925" type="ll1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="754982459317776">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="969140402544232" type="bom2">
+                    <param id="0" name="Object">tabL2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="597413813353461" type="ll1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="284553709156696">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="758158385360492" type="boat1">
+                    <param id="0" name="Object">Sprite3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="503170378153178" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="951022306604042" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="524678375784599" type="boat1" />
+                <action id="-9" name="Destroy" sid="837405536490129" type="bom2" />
+                <action id="-16" name="Wait" sid="769004063317954" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="420360265734314" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="715053031379847" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="359157695037534">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="607750187928674" type="bom2">
+                    <param id="0" name="Object">Sprite3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="357226643607684" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="676554670702371" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="250343010492967" type="boat1" />
+                <action id="-9" name="Destroy" sid="801909817613647" type="bom2" />
+                <action id="-16" name="Wait" sid="739799080678451" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="805197730785872" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="797244343355031" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="763130231709598">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="561062620367962" type="boat1">
+                    <param id="0" name="Object">coin1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="542253462567164" type="q1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="673411360361847" type="q1C1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="957234940189156" type="q1C2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="920994619770684" type="q1C3">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="780143868942554" type="q1C4">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="404038249400275" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="629987414606698" type="q1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="955327725171008" type="q1C1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="127231731508380" type="q1C2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="968083520561975" type="q1C3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="429268537444545" type="q1C4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="330248616080783">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="853802931592147" type="bom2">
+                    <param id="0" name="Object">coin1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="421485509943564" type="q1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="737551731282471" type="q1C1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="752822794137376" type="q1C2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="444011873568508" type="q1C3">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="840297949572250" type="q1C4">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="499825607331875" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="835130432539022" type="q1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="749849114033232" type="q1C1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="355683534124906" type="q1C2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="267611870113209" type="q1C3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="720996218386752" type="q1C4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="279174733859012">
+            <conditions>
+                <condition id="3" name="On touched object" sid="601503589846843" type="Touch">
+                    <param id="0" name="Object">q1C1</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="234927842568461" type="q1" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="303044786517406" type="boock2" />
+                <action id="-9" name="Destroy" sid="587707863088439" type="coin1" />
+            </actions>
+        </event-block>
+        <event-block sid="691099127064335">
+            <conditions>
+                <condition id="3" name="On touched object" sid="813025356164444" type="Touch">
+                    <param id="0" name="Object">q1C2</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="103691118478518" type="q1" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="824642796528281" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="936434807906247" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="714273628405364" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="807306782435317" type="boat1" />
+                <action id="-9" name="Destroy" sid="799403166403440" type="bom2" />
+                <action id="-16" name="Wait" sid="151677795153760" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="257918297637526" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="920745433848093" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="469575563815516">
+            <conditions>
+                <condition id="3" name="On touched object" sid="359133126340589" type="Touch">
+                    <param id="0" name="Object">q1C3</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="409698297981540" type="q1" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="134839131886889" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="846148776301095" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="385330703721451" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="335353835760593" type="boat1" />
+                <action id="-9" name="Destroy" sid="480715627910549" type="bom2" />
+                <action id="-16" name="Wait" sid="196664980366426" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="738651761803710" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="143317059260629" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="293818517553087">
+            <conditions>
+                <condition id="3" name="On touched object" sid="277833758005835" type="Touch">
+                    <param id="0" name="Object">q1C4</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="421359865113283" type="q1" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="661225898504021" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="603572251946976" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="341359451190909" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="631775595406564" type="boat1" />
+                <action id="-9" name="Destroy" sid="507018177870652" type="bom2" />
+                <action id="-16" name="Wait" sid="209770963832565" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="981481762091549" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="208958321389849" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="823517367509091">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="520132509680910" type="boat1">
+                    <param id="0" name="Object">coin2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="368569176309816" type="q2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="174604047705434" type="q2C1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="278045134886295" type="q2C2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="103858530990843" type="q2C3">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="954592079052741" type="q2C4">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="396542546789100" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="891883655058638" type="q2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="860336883512227" type="q2C1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="465123257077430" type="q2C2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="637327686423071" type="q2C3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="600000165237840" type="q2C4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="239116860263423">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="833163942571677" type="bom2">
+                    <param id="0" name="Object">coin2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="686641541199054" type="q2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="234638628056478" type="q2C1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="944264896741737" type="q2C2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="176410467710813" type="q2C3">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="899892704120473" type="q2C4">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="444662230474091" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="390180156027038" type="q2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="478092256628985" type="q2C1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="146026024431046" type="q2C2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="256191165827618" type="q2C3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="575221181162648" type="q2C4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="168823735270545">
+            <conditions>
+                <condition id="3" name="On touched object" sid="333410194918300" type="Touch">
+                    <param id="0" name="Object">q2C1</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="904250412301133" type="q2" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="350637107137277" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="266125855526156" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="231095398690290" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="229208157047900" type="boat1" />
+                <action id="-9" name="Destroy" sid="964812958948224" type="bom2" />
+                <action id="-16" name="Wait" sid="382487877244550" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="165190498869039" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="218022439039532" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="957827500233272">
+            <conditions>
+                <condition id="3" name="On touched object" sid="132074987725050" type="Touch">
+                    <param id="0" name="Object">q2C2</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="647108770782646" type="q2" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="575769550139854" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="364251985417624" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="226581468157183" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="708369366683431" type="boat1" />
+                <action id="-9" name="Destroy" sid="373928562824419" type="bom2" />
+                <action id="-16" name="Wait" sid="489174935026747" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="784435566885235" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="408195531784554" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="989786295160703">
+            <conditions>
+                <condition id="3" name="On touched object" sid="705614332569938" type="Touch">
+                    <param id="0" name="Object">q2C3</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="672777926844339" type="q2" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="421132074152355" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="912715087629637" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="792984823341539" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="825334782177773" type="boat1" />
+                <action id="-9" name="Destroy" sid="673743543857657" type="bom2" />
+                <action id="-16" name="Wait" sid="542721470315790" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="968906196376765" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="252718831618441" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="687005775608011">
+            <conditions>
+                <condition id="3" name="On touched object" sid="749694956132094" type="Touch">
+                    <param id="0" name="Object">q2C4</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="400741308503044" type="q2" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="510116159043992" type="boock3" />
+                <action id="-9" name="Destroy" sid="165473526576453" type="coin2" />
+            </actions>
+        </event-block>
+        <event-block sid="128924837704070">
+            <conditions>
+                <condition id="-9" inverted="1" name="Is visible" sid="495849415537183" type="d11" />
+            </conditions>
+            <actions>
+                <action behavior="Solid" id="0" name="Set enabled" sid="775030075953683" type="d11">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="689336283511414">
+            <conditions>
+                <condition id="-22" name="Else" sid="651064277027369" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Solid" id="0" name="Set enabled" sid="646765887619502" type="d11">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="390365600780824">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="876264526356590" type="boat1">
+                    <param id="0" name="Object">coin3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="894497448258661" type="q3">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="350391839586807" type="q3C1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="923306762893070" type="q3C2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="378031444202687" type="q3C3">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="875792265930069" type="q3C4">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="974678098453245" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="146080913229991" type="q3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="203257068419358" type="q3C1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="863162075892296" type="q3C2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="229446039377269" type="q3C3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="395299515529298" type="q3C4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="999905605643134">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="496330111465859" type="bom2">
+                    <param id="0" name="Object">coin3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="602491858011987" type="q3">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="794293898889901" type="q3C1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="812167248336848" type="q3C2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="487795997969852" type="q3C3">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="643668078937934" type="q3C4">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="738471054197021" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="987987365089286" type="q3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="714741759875609" type="q3C1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="988892595093410" type="q3C2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="616081511423685" type="q3C3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="954830995229533" type="q3C4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="485639011360824">
+            <conditions>
+                <condition id="3" name="On touched object" sid="440943907523212" type="Touch">
+                    <param id="0" name="Object">q3C1</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="875769089654625" type="q3" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="965667324034175" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="492108510050108" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="375493849775206" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="799878432100842" type="boat1" />
+                <action id="-9" name="Destroy" sid="897389181130057" type="bom2" />
+                <action id="-16" name="Wait" sid="868352372407319" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="242619419774218" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="315478763137303" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="546931234952778">
+            <conditions>
+                <condition id="3" name="On touched object" sid="570884248675981" type="Touch">
+                    <param id="0" name="Object">q3C2</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="667303743709463" type="q3" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="202291444435990" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="659712052916322" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="776487171063452" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="739215829191230" type="boat1" />
+                <action id="-9" name="Destroy" sid="555254698335011" type="bom2" />
+                <action id="-16" name="Wait" sid="265844112485522" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="205907988789803" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="302278546251757" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="280386337959821">
+            <conditions>
+                <condition id="3" name="On touched object" sid="618429964389717" type="Touch">
+                    <param id="0" name="Object">q3C3</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="564068089100423" type="q3" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="863419877450687" type="d11">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="669355099038432" type="coin3" />
+            </actions>
+        </event-block>
+        <event-block sid="192307120682883">
+            <conditions>
+                <condition id="3" name="On touched object" sid="924775302381105" type="Touch">
+                    <param id="0" name="Object">q3C4</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="487999920162078" type="q3" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="402999973415035" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="158962086545493" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="359713347699302" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="351145915720010" type="boat1" />
+                <action id="-9" name="Destroy" sid="609460135747539" type="bom2" />
+                <action id="-16" name="Wait" sid="745478814505323" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="113048145297766" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="831453536477759" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="170948523792554">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="565340414372949" type="boat1">
+                    <param id="0" name="Object">coin4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="670950281158719" type="q4">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="614177313890609" type="q4C1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="865543415838829" type="q4C2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="710180953560539" type="q4C3">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="555116795370143" type="q4C4">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="283758050616698" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="881426154646894" type="q4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="295143391214398" type="q4C1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="243830612869223" type="q4C2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="307968574570792" type="q4C3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="794968839707794" type="q4C4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="473157720481909">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="580917037282290" type="bom2">
+                    <param id="0" name="Object">coin4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="828578244584342" type="q4">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="713935870127836" type="q4C1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="259832519634952" type="q4C2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="839829128380285" type="q4C3">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="372403652195146" type="q4C4">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="975584225177938" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="698749445869411" type="q4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="538711658462518" type="q4C1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="735601989031435" type="q4C2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="204588819309401" type="q4C3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="268196286637305" type="q4C4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="689900717246664">
+            <conditions>
+                <condition id="3" name="On touched object" sid="117833637182408" type="Touch">
+                    <param id="0" name="Object">q4C1</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="703324141126825" type="q4" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="621879270149267" type="boock4" />
+                <action id="-9" name="Destroy" sid="373716437595100" type="coin4" />
+            </actions>
+        </event-block>
+        <event-block sid="741279967664330">
+            <conditions>
+                <condition id="3" name="On touched object" sid="383777047033542" type="Touch">
+                    <param id="0" name="Object">q4C2</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="716483809735531" type="q4" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="213594675380080" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="516538408103712" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="663039437034548" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="406060528759998" type="boat1" />
+                <action id="-9" name="Destroy" sid="871505947594067" type="bom2" />
+                <action id="-16" name="Wait" sid="674339662513128" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="347429695249097" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="323293738243417" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="767514739332664">
+            <conditions>
+                <condition id="3" name="On touched object" sid="806898900023156" type="Touch">
+                    <param id="0" name="Object">q4C3</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="272089229793972" type="q4" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="179909736755796" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="153664546753197" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="489320683910970" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="829243629993704" type="boat1" />
+                <action id="-9" name="Destroy" sid="852278478398680" type="bom2" />
+                <action id="-16" name="Wait" sid="972599313566046" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="131370065005010" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="887145691144367" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="968723197090815">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="827315319720083">
+            <conditions>
+                <condition id="3" name="On touched object" sid="179569172055672" type="Touch">
+                    <param id="0" name="Object">q4C4</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="837907925671866" type="q4" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="850489817993983" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="552529682357021" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="426276175636678" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="196401776832121" type="boat1" />
+                <action id="-9" name="Destroy" sid="985860283906287" type="bom2" />
+                <action id="-16" name="Wait" sid="210887549530073" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="418393159427095" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="603510369732171" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="895210989540145">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="610905773867689" type="boat1">
+                    <param id="0" name="Object">tab3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="934925709090438" type="coin6">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="270983074270436">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="640206251730808" type="bom2">
+                    <param id="0" name="Object">tab3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="317117440069679" type="coin6">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="985465057499092">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="501325359478372" type="boat1">
+                    <param id="0" name="Object">coin5</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="731808467453584" type="coin5" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="663602632961551" type="q5">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="973998189228261" type="q5c1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="815356159153044" type="q5c2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="390479601205799" type="q5c3">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="612291658394398" type="q5c4">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="303155192822988" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="543718958693166" type="q5">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="635495751195961" type="q5c1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="295199597668381" type="q5c2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="224553924782411" type="q5c3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="483567953887530" type="q5c4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="777290387812802">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="472973062991712" type="bom2">
+                    <param id="0" name="Object">coin5</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="172429131227883" type="coin5" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="249901330180136" type="q5">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="860461903488054" type="q5c1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="151030162643357" type="q5c2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="537370175251738" type="q5c3">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="158705162114336" type="q5c4">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="435227200580950" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="677140285014953" type="q5">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="915696140428617" type="q5c1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="554087859947935" type="q5c2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="655127486310420" type="q5c3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="140571038868952" type="q5c4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="291363620911181">
+            <conditions>
+                <condition id="3" name="On touched object" sid="277010487220736" type="Touch">
+                    <param id="0" name="Object">q5c1</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="549914705434763" type="q5" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="822836752226324" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="428865788109844" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="463979680686190" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="527453759281772" type="boat1" />
+                <action id="-9" name="Destroy" sid="895861340677337" type="bom2" />
+                <action id="-16" name="Wait" sid="362869337159175" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="215190453712233" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="436928369159822" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="911852830889539">
+            <conditions>
+                <condition id="3" name="On touched object" sid="503411611957188" type="Touch">
+                    <param id="0" name="Object">q5c2</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="686625773160766" type="q5" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="340241859326050" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="480721602690399" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="670046159896204" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="255258490187923" type="boat1" />
+                <action id="-9" name="Destroy" sid="955694805283769" type="bom2" />
+                <action id="-16" name="Wait" sid="350315739709488" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="487635137961216" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="226136639790860" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="351878030255646">
+            <conditions>
+                <condition id="3" name="On touched object" sid="634916088761001" type="Touch">
+                    <param id="0" name="Object">q5c3</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="167873350443651" type="q5" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="223434075863938" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="937796335827753" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="624661495515292" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="848627007222983" type="boat1" />
+                <action id="-9" name="Destroy" sid="269955515089828" type="bom2" />
+                <action id="-16" name="Wait" sid="754592799171334" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="494729777282472" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="104458275116629" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="560946750754981">
+            <conditions>
+                <condition id="3" name="On touched object" sid="344251992922707" type="Touch">
+                    <param id="0" name="Object">q5c4</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="473301668608754" type="q5" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="259371903839322" type="TiledBackground17" />
+                <action id="-9" name="Destroy" sid="990785017293531" type="coin5" />
+            </actions>
+        </event-block>
+        <event-block sid="272254960986202">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="856627314176160" type="boat1">
+                    <param id="0" name="Object">coin6</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="574513781248315" type="coin6" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="929106274374606" type="q6">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="798463469148451" type="q6c1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="808896650914145" type="q6c2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="388114704631136" type="q6c3">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="539115003086208" type="q6c4">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="528385458642271" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="282160057876908" type="q6">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="116766846332001" type="q6c1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="290275054403083" type="q6c2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="856797991741688" type="q6c3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="979129940790056" type="q6c4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="223787288871886">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="655041209427085" type="bom2">
+                    <param id="0" name="Object">coin6</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="107061182624728" type="coin6" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="490499711934725" type="q6">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="122853857145494" type="q6c1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="595691365044938" type="q6c2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="469629977962317" type="q6c3">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="254589915760847" type="q6c4">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="348264392191727" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="871128883847093" type="q6">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="180994298596384" type="q6c1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="294181758078546" type="q6c2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="438056941017602" type="q6c3">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="167124050998963" type="q6c4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="157825093013499">
+            <conditions>
+                <condition id="3" name="On touched object" sid="850866726369554" type="Touch">
+                    <param id="0" name="Object">q6c1</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="780350053686947" type="q6" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="375639946772596" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="119253168999144" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="742758422637765" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="148038807305789" type="boat1" />
+                <action id="-9" name="Destroy" sid="572947617947724" type="bom2" />
+                <action id="-16" name="Wait" sid="303066020394831" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="488102717648574" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="938644044867226" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="274565912874148">
+            <conditions>
+                <condition id="3" name="On touched object" sid="522124840338966" type="Touch">
+                    <param id="0" name="Object">q6c2</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="644130623546233" type="q6" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="506662213466418" type="boock66" />
+                <action id="-9" name="Destroy" sid="164796023242329" type="coin6" />
+            </actions>
+        </event-block>
+        <event-block sid="211225495679864">
+            <conditions>
+                <condition id="3" name="On touched object" sid="771286207487870" type="Touch">
+                    <param id="0" name="Object">q6c3</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="416435952252068" type="q6" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="209215922406950" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="128670701510853" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="400306096760659" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="239972732371677" type="boat1" />
+                <action id="-9" name="Destroy" sid="315090530780089" type="bom2" />
+                <action id="-16" name="Wait" sid="857532816806121" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="369987678589279" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="423599860258445" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="619842437081539">
+            <conditions>
+                <condition id="3" name="On touched object" sid="764547467126885" type="Touch">
+                    <param id="0" name="Object">q6c4</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="873999284257869" type="q6" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="496641342960433" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="950248464782158" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="137705394341896" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="512364443225206" type="boat1" />
+                <action id="-9" name="Destroy" sid="219419535717881" type="bom2" />
+                <action id="-16" name="Wait" sid="931498171609087" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="145772305340292" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="416293317371533" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="271771705133748">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="481658515121602" type="boat1">
+                    <param id="0" name="Object">Sprite17</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Sine" id="0" name="Set active" sid="972416521938104" type="boat1">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="550266942680165">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="509487194833759" type="bom2">
+                    <param id="0" name="Object">Sprite17</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Sine" id="0" name="Set active" sid="274432925012358" type="bom2">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="907510538069054">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="547115748254806" type="bom2">
+                    <param id="0" name="Object">TiledBackground10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="271455289565295" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="760089778391777" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="117362778931321" type="boat1" />
+                <action id="-9" name="Destroy" sid="406995136264085" type="bom2" />
+                <action id="-16" name="Wait" sid="398249937637501" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="396348898219664" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="121480749767103" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="822072709790254">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="276273002221065" type="boat1">
+                    <param id="0" name="Object">TiledBackground10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="143973108490916" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="501156808779283" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="485804558732043" type="boat1" />
+                <action id="-9" name="Destroy" sid="293775019682261" type="bom2" />
+                <action id="-16" name="Wait" sid="330744494886780" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="192344402556819" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="741268079440908" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="239084278512687">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="694261751347007" type="coin1" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="845753634759493" type="Audio">
+                    <param id="0" name="Audio file">short-success-sound-glockenspiel-treasure-video-game-6346</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">120</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="496669088474784">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="526302031943330" type="coin2" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="392228347404122" type="Audio">
+                    <param id="0" name="Audio file">short-success-sound-glockenspiel-treasure-video-game-6346</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">120</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="862334759617384">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="260191397742373" type="coin3" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="742818462634023" type="Audio">
+                    <param id="0" name="Audio file">short-success-sound-glockenspiel-treasure-video-game-6346</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">120</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="873484976768514">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="166393714185371" type="coin4" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="916876438090367" type="Audio">
+                    <param id="0" name="Audio file">short-success-sound-glockenspiel-treasure-video-game-6346</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">120</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="898746611581829">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="669212226548236" type="coin5" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="218570240444882" type="Audio">
+                    <param id="0" name="Audio file">short-success-sound-glockenspiel-treasure-video-game-6346</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">120</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="182950707851788">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="555507625314090" type="coin6" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="820309024851873" type="Audio">
+                    <param id="0" name="Audio file">short-success-sound-glockenspiel-treasure-video-game-6346</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">120</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="660407936657704">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="346238291690376" type="coin7" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="339069574648900" type="Audio">
+                    <param id="0" name="Audio file">short-success-sound-glockenspiel-treasure-video-game-6346</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">120</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="955845879114839">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="940380044804260" type="coin8" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="404962505740202" type="Audio">
+                    <param id="0" name="Audio file">short-success-sound-glockenspiel-treasure-video-game-6346</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">120</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="379401929747372">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="632456539147623" type="coin9" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="419792709418355" type="Audio">
+                    <param id="0" name="Audio file">short-success-sound-glockenspiel-treasure-video-game-6346</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">120</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="426035264598438">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="841797111473713" type="coin10" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="921828697738868" type="Audio">
+                    <param id="0" name="Audio file">short-success-sound-glockenspiel-treasure-video-game-6346</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">120</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="584745506030960">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="508110634965444" type="System">
+                    <param id="0" name="Variable">xset</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">4658</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="375430587837668" type="flag2">
+                    <param id="0" name="Animation">&quot;set&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="739586300097921">
+            <conditions>
+                <condition id="-22" name="Else" sid="661667021677987" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="632746366323727" type="flag2">
+                    <param id="0" name="Animation">&quot;default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="654528416168748">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="563100184978093" type="System">
+                    <param id="0" name="Variable">xset</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">8236</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="411214705763088" type="flag">
+                    <param id="0" name="Animation">&quot;set&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="712907391081560">
+            <conditions>
+                <condition id="-22" name="Else" sid="435153482419726" type="System" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="704476080114370" type="flag">
+                    <param id="0" name="Animation">&quot;default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="697225162320151">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="895860629196933" type="boat1">
+                    <param id="0" name="Object">flag</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="420951859165268" type="System">
+                    <param id="0" name="Variable">xset</param>
+                    <param id="1" name="Value">8236</param>
+                </action>
+                <action id="-9" name="Set value" sid="445776579620672" type="System">
+                    <param id="0" name="Variable">yset</param>
+                    <param id="1" name="Value">744</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="992513086021524">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="877872274442120" type="boat1">
+                    <param id="0" name="Object">flag2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="423402088539740" type="System">
+                    <param id="0" name="Variable">xset</param>
+                    <param id="1" name="Value">4658</param>
+                </action>
+                <action id="-9" name="Set value" sid="222479662666801" type="System">
+                    <param id="0" name="Variable">yset</param>
+                    <param id="1" name="Value">573</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="892255191342847">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="812333785164155" type="bom2">
+                    <param id="0" name="Object">flag</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="859561049096739" type="System">
+                    <param id="0" name="Variable">xset</param>
+                    <param id="1" name="Value">8236</param>
+                </action>
+                <action id="-9" name="Set value" sid="659252351602968" type="System">
+                    <param id="0" name="Variable">yset</param>
+                    <param id="1" name="Value">744</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="656559538221814">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="973508578053816" type="bom2">
+                    <param id="0" name="Object">flag2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="691235842723331" type="System">
+                    <param id="0" name="Variable">xset</param>
+                    <param id="1" name="Value">4658</param>
+                </action>
+                <action id="-9" name="Set value" sid="722808258883873" type="System">
+                    <param id="0" name="Variable">yset</param>
+                    <param id="1" name="Value">573</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="294609628707102">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="397087953279992" type="boat1" />
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="362120455753936" type="Audio">
+                    <param id="0" name="Audio file">die</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">115</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="919941637647721">
+            <conditions>
+                <condition id="-9" inverted="1" name="Is visible" sid="362599880834020" type="boatdin" />
+            </conditions>
+            <actions>
+                <action behavior="Solid" id="0" name="Set enabled" sid="391029431372861" type="boatdin">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="459308275233545">
+            <conditions>
+                <condition id="-9" inverted="1" name="Is visible" sid="572739548394639" type="boatdin2" />
+            </conditions>
+            <actions>
+                <action behavior="Solid" id="0" name="Set enabled" sid="983337473586049" type="boatdin2">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="676717793553158">
+            <conditions>
+                <condition id="-9" name="Is visible" sid="503189412035727" type="boatdin" />
+            </conditions>
+            <actions>
+                <action behavior="Solid" id="0" name="Set enabled" sid="251032376410468" type="boatdin">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="368205995588070">
+            <conditions>
+                <condition id="-9" name="Is visible" sid="135907393946530" type="boatdin2" />
+            </conditions>
+            <actions>
+                <action behavior="Solid" id="0" name="Set enabled" sid="672650899258768" type="boatdin2">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="523919520134717">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="914451883042170" type="boat1">
+                    <param id="0" name="Object">tab4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="304419028890131" type="boatdin">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="817052340013876">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="885092731900736" type="bom2">
+                    <param id="0" name="Object">tab4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="414930376922477" type="boatdin">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="495471674192032">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="614409021067871" type="boat1">
+                    <param id="0" name="Object">tab5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="251964180606884" type="boatdin2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="279062822483875">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="807743803906753" type="bom2">
+                    <param id="0" name="Object">tab5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="849581889162839" type="boatdin2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="419248645774255">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="523708282766464" type="bom2">
+                    <param id="0" name="Object">doorcave</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="288054603912242" type="System">
+                    <param id="0" name="Seconds">2.0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="167987407427805" type="System">
+                    <param id="0" name="Layout">cave</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="769701189814773">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="346523512100874" type="boat1">
+                    <param id="0" name="Object">doorcave</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="605461485283534" type="System">
+                    <param id="0" name="Seconds">2.0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="262103325353595" type="System">
+                    <param id="0" name="Layout">cave</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="970315570499783">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="282218947749038" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="480672047809498" type="textname1">
+                    <param id="0" name="X">boat1.X</param>
+                    <param id="1" name="Y">boat1.Y-128</param>
+                </action>
+                <action id="-3" name="Set position" sid="742787271394902" type="textname2">
+                    <param id="0" name="X">bom2.X</param>
+                    <param id="1" name="Y">bom2.Y-128</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="251166056240133">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="893461672349812" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="100018065204850" type="fontttt">
+                    <param id="0" name="Text">&quot;Wrong : &quot;&amp;wrong</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="580880568943987">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="482910579561546" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="132103401181346" type="System">
+                    <param id="0" name="Variable">xset</param>
+                    <param id="1" name="Value">205</param>
+                </action>
+                <action id="-9" name="Set value" sid="675077230693525" type="System">
+                    <param id="0" name="Variable">yset</param>
+                    <param id="1" name="Value">712</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="353476220585501">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="823195170651445" type="boat1">
+                    <param id="0" name="Object">coin7</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="107477207320263" type="q7">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="898493618512263" type="q7c1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="964866310491254" type="q7c2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="147097203005220" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="682543861183525" type="q7">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="972166850159831" type="q7c1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="726725361667025" type="q7c2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="678344213222224">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="287531927344221" type="bom2">
+                    <param id="0" name="Object">coin7</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="480651751332766" type="q7">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="922247014693402" type="q7c1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="431481621025515" type="q7c2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="994384371473292" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="215366776722558" type="q7">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="794368922416274" type="q7c1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="201803692446095" type="q7c2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="834484910663519">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="302797953950952" type="boat1">
+                    <param id="0" name="Object">coin7</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="953142074552983" type="q7">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="781532027194822" type="q7c1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="627106080525385" type="q7c2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="384294756238335" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="981364427335489" type="q7">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="703946881372675" type="q7c1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="870489741641871" type="q7c2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="399026726615108">
+            <conditions>
+                <condition id="3" name="On touched object" sid="113264575709410" type="Touch">
+                    <param id="0" name="Object">q7c2</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="467639228983193" type="q7" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="223656004810597" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="463531114334864" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="777544978318707" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="478691615191734" type="boat1" />
+                <action id="-9" name="Destroy" sid="388856142584432" type="bom2" />
+                <action id="-16" name="Wait" sid="760119246067910" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="484444441664120" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="715646043856356" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="333284045819969">
+            <conditions>
+                <condition id="3" name="On touched object" sid="180610681429946" type="Touch">
+                    <param id="0" name="Object">q7c1</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="577626594951003" type="q7" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="527437798220726" type="boock7" />
+                <action id="-9" name="Destroy" sid="272429829253665" type="coin7" />
+            </actions>
+        </event-block>
+        <event-block sid="699036228206227">
+            <conditions>
+                <condition id="3" name="On touched object" sid="937441129578461" type="Touch">
+                    <param id="0" name="Object">q8c5</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="531739469890643" type="q8" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="643501542340590" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="300251061378196" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="267452290068388" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="845785301822867" type="boat1" />
+                <action id="-9" name="Destroy" sid="309420486710084" type="bom2" />
+                <action id="-16" name="Wait" sid="944440835704731" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="820138871776245" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="443484366874086" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="928545489647837">
+            <conditions>
+                <condition id="3" name="On touched object" sid="910172651110272" type="Touch">
+                    <param id="0" name="Object">q8c4</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="308425210925606" type="q8" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="395178979157803" type="boock8" />
+                <action id="-9" name="Destroy" sid="506476708309343" type="coin8" />
+            </actions>
+        </event-block>
+        <event-block sid="319525404241551">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="897636746697904" type="boat1">
+                    <param id="0" name="Object">coin8</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="319223958275070" type="q8">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="964599169094010" type="q8c4">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="897205990562372" type="q8c5">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="317028289092972" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="446759555938154" type="q8">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="574665065103802" type="q8c4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="758759370943804" type="q8c5">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="770016803281634">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="692794230042271" type="bom2">
+                    <param id="0" name="Object">coin8</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="495274907208421" type="q8">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="371323485832583" type="q8c4">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="162396719476252" type="q8c5">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="318401697817761" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="974698281350991" type="q8">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="965724218883005" type="q8c4">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="420950542799734" type="q8c5">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="741420759637885">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="436853526991619" type="boat1">
+                    <param id="0" name="Object">tab6</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="308661197256384" type="coin9">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="799134733834251">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="982765598478572" type="bom2">
+                    <param id="0" name="Object">tab6</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="831328948976962" type="coin9">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="508475684080966">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="780437241325232" type="boat1">
+                    <param id="0" name="Object">coin9</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="826963884981545" type="coin9" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="669748940480304" type="q9">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="526573040144914" type="q9c1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="627987807216493" type="q9c2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="474178199526564" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="539835368202838" type="q9">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="882053575371421" type="q9c1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="745661141011826" type="q9c2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="222149737365863">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="217850282424817" type="bom2">
+                    <param id="0" name="Object">coin9</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="404123236525147" type="coin9" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="990978283088992" type="q9">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="429009587368717" type="q9c1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="109272806002515" type="q9c2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="674573572280673" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="540177547361364" type="q9">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="876826640561373" type="q9c1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="259365965811685" type="q9c2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="694005236955182">
+            <conditions>
+                <condition id="3" name="On touched object" sid="723776422228591" type="Touch">
+                    <param id="0" name="Object">q9c2</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="447988387339132" type="q9" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="299652741164503" type="boock10" />
+                <action id="-9" name="Destroy" sid="235822964788927" type="coin9" />
+            </actions>
+        </event-block>
+        <event-block sid="499986342112293">
+            <conditions>
+                <condition id="3" name="On touched object" sid="664141644857154" type="Touch">
+                    <param id="0" name="Object">q9c1</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="189991768179216" type="q9" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="700468147584883" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="242992393058378" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="699583478352651" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="576858132938528" type="boat1" />
+                <action id="-9" name="Destroy" sid="507479469386700" type="bom2" />
+                <action id="-16" name="Wait" sid="950875274820692" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="228835142479335" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="741116925435323" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="914724455345267">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="695268392727826" type="boat1">
+                    <param id="0" name="Object">coin10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="153057509584774" type="q10">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="768451007375303" type="q10c1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="179805571700168" type="q10c2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="190150923563025" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="161738797599258" type="q10">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="662681127743940" type="q10c1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="564623366101471" type="q10c2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="463573820143721">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="583585113230505" type="bom2">
+                    <param id="0" name="Object">coin10</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="429609553851589" type="q10">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="227436683295011" type="q10c1">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="755555971687582" type="q10c2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="597949283689882" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-15" name="Set visible" sid="321005199293769" type="q10">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="210061796241867" type="q10c1">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="246604244354635" type="q10c2">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="800480744311589">
+            <conditions>
+                <condition id="3" name="On touched object" sid="451791360437568" type="Touch">
+                    <param id="0" name="Object">q10c1</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="180111128258371" type="q10" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="678216901467544" type="boock10" />
+                <action id="-9" name="Destroy" sid="677307202003141" type="coin10" />
+                <action id="-16" name="Wait" sid="920449484390953" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="861385883383041" type="System">
+                    <param id="0" name="Layout">end</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="406178140951549">
+            <conditions>
+                <condition id="3" name="On touched object" sid="875072738618778" type="Touch">
+                    <param id="0" name="Object">q10c2</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="826020416961228" type="q10" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="541746262204162" type="System">
+                    <param id="0" name="Variable">wrong</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="677839831507178" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="717738492080306" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="658092220684025" type="boat1" />
+                <action id="-9" name="Destroy" sid="583059565361716" type="bom2" />
+                <action id="-16" name="Wait" sid="601228696191832" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="934407987270798" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="905686175221102" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="570541895536351">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="713716138048041" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="785031585743294" type="System">
+                    <param id="0" name="Variable">timer</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="664865446260321">
+            <conditions>
+                <condition id="-3" name="On end of layout" sid="659463821506114" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="464539694340405" type="System">
+                    <param id="0" name="Variable">finish</param>
+                    <param id="1" name="Value">timer</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="702163102395616">
+            <conditions>
+                <condition id="3" name="On touched object" sid="938448084320039" type="Touch">
+                    <param id="0" name="Object">btnhome</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="432521991180818" type="System">
+                    <param id="0" name="Layout">main</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="764823379888865">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="858966654926717" type="boat1">
+                    <param id="0" name="Object">lava</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="863141139610222" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="269086559817212" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="788539698244406" type="boat1" />
+                <action id="-9" name="Destroy" sid="866043760044945" type="bom2" />
+                <action id="-16" name="Wait" sid="529375695485319" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="585278230796250" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="455126830430285" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="222936755294150">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="575000886308669" type="bom2">
+                    <param id="0" name="Object">lava</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="409119415513504" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="630403944271346" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="225121467364716" type="boat1" />
+                <action id="-9" name="Destroy" sid="531891243929544" type="bom2" />
+                <action id="-16" name="Wait" sid="368312248789110" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="848740164925017" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="601634970752008" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="216050828603744">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="883622997122470" type="boat1">
+                    <param id="0" name="Object">lavagif</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="699145030035852" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="278015719650372" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="795208611085652" type="boat1" />
+                <action id="-9" name="Destroy" sid="201274561903332" type="bom2" />
+                <action id="-16" name="Wait" sid="807226689430083" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="572867299874874" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="389980615113056" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="662467425574091">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="560505940226315" type="bom2">
+                    <param id="0" name="Object">lavagif</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="191139195438185" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="432618148758572" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="451399058260159" type="boat1" />
+                <action id="-9" name="Destroy" sid="495190146612101" type="bom2" />
+                <action id="-16" name="Wait" sid="951526369720214" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="245349179624933" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="644209931800117" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="537469940131582">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="743450377381648" type="boat1">
+                    <param id="0" name="Object">Sprite11</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="262299141304413" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="125726453600882" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="655730104165369" type="boat1" />
+                <action id="-9" name="Destroy" sid="693436511321219" type="bom2" />
+                <action id="-16" name="Wait" sid="328904166438933" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="211095953148376" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="758723560802439" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="764016784834003">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="306691922849115" type="bom2">
+                    <param id="0" name="Object">Sprite11</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="546935711855292" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="237164326533833" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="378265105345483" type="boat1" />
+                <action id="-9" name="Destroy" sid="652542960581892" type="bom2" />
+                <action id="-16" name="Wait" sid="673593562086142" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="372198899202551" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="230640004798267" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="636346629794873">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="495973501317923" type="boat1">
+                    <param id="0" name="Object">thorn2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="723522858097995" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="373925879761905" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="877562044936229" type="boat1" />
+                <action id="-9" name="Destroy" sid="120094943022111" type="bom2" />
+                <action id="-16" name="Wait" sid="607416099018586" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="527483335952007" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="397897409837253" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="898274850226652">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="777183744467335" type="bom2">
+                    <param id="0" name="Object">thorn2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="741508900589626" type="boat1">
+                    <param id="0" name="Object">boatdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="779155745754853" type="bom2">
+                    <param id="0" name="Object">bomdie</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="261091330179387" type="boat1" />
+                <action id="-9" name="Destroy" sid="906772494993754" type="bom2" />
+                <action id="-16" name="Wait" sid="710037523471539" type="System">
+                    <param id="0" name="Seconds">3.0</param>
+                </action>
+                <action id="-3" name="Create object" sid="865498292465684" type="System">
+                    <param id="0" name="Object to create">boat1</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+                <action id="-3" name="Create object" sid="240337717892752" type="System">
+                    <param id="0" name="Object to create">bom2</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">xset-82</param>
+                    <param id="3" name="Y">yset</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="740621953966803">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="276886430486725" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="528414032788169" type="System">
+                    <param id="0" name="Variable">xset</param>
+                    <param id="1" name="Value">205</param>
+                </action>
+                <action id="-9" name="Set value" sid="871120162883568" type="System">
+                    <param id="0" name="Variable">yset</param>
+                    <param id="1" name="Value">712</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="109610010820532">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="815271834565086" type="Touch">
+                    <param id="0" name="Object">a</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="936802108923384" type="bom2">
+                    <param id="0" name="Control">0</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="876493960081613" type="bom2">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="878696668617836">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="274139178733355" type="Touch">
+                    <param id="0" name="Object">d</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="921625379764645" type="bom2">
+                    <param id="0" name="Control">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="493476379359030" type="bom2">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="173352007714805">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="634192783372021" type="Touch">
+                    <param id="0" name="Object">w</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="339198974058416" type="bom2">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="473711819975286">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="959700037607896" type="Touch">
+                    <param id="0" name="Object">a1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="502778717918349" type="boat1">
+                    <param id="0" name="Control">0</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="931065455763635" type="boat1">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="838142659416280">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="805602344088413" type="Touch">
+                    <param id="0" name="Object">w1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="733507042972267" type="boat1">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="258329425376765">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="984708439171615" type="Touch">
+                    <param id="0" name="Object">d1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="182126498054756" type="boat1">
+                    <param id="0" name="Control">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="511930202742789" type="boat1">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="654303348093853">
+            <conditions>
+                <condition id="3" name="On touched object" sid="149533401040514" type="Touch">
+                    <param id="0" name="Object">com</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="176160365246626" type="mobilemain" />
+                <action id="-9" name="Destroy" sid="991954757323178" type="w1" />
+                <action id="-9" name="Destroy" sid="919278727724733" type="a1" />
+                <action id="-9" name="Destroy" sid="197088858854675" type="d1" />
+                <action id="-9" name="Destroy" sid="668541052964659" type="a" />
+                <action id="-9" name="Destroy" sid="342799417622094" type="w" />
+                <action id="-9" name="Destroy" sid="334312575581234" type="d" />
+                <action id="-9" name="Destroy" sid="865537181856811" type="mobile" />
+                <action id="-9" name="Destroy" sid="719152655396156" type="com" />
+            </actions>
+        </event-block>
+        <event-block sid="638076713790183">
+            <conditions>
+                <condition id="3" name="On touched object" sid="474250455947025" type="Touch">
+                    <param id="0" name="Object">mobile</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="371139663751922" type="mobilemain" />
+                <action id="-9" name="Destroy" sid="139469806995161" type="mobile" />
+                <action id="-9" name="Destroy" sid="654399774682030" type="com" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

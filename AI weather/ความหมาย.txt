@@ -1,0 +1,2 @@
+precipitation = หยาดน้ำฟ้า  (mm)
+wind = ทิศทางลม

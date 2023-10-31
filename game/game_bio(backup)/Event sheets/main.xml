@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>main</name>
+    <events>
+        <event-block sid="626346856795745">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="954584003467590" type="Mouse">
+                    <param id="0" name="Object">btnplay</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="656594958218635" type="btnplay">
+                    <param id="0" name="Opacity">60</param>
+                </action>
+                <action id="-16" name="Wait" sid="792223514801524" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="872998541146780" type="btnplay">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="802686727410268">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="139968613768957" type="Mouse">
+                    <param id="0" name="Object">btncredit</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="729503435616007" type="btncredit">
+                    <param id="0" name="Opacity">60</param>
+                </action>
+                <action id="-16" name="Wait" sid="156386563101297" type="System">
+                    <param id="0" name="Seconds">0.3</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="460221324192356" type="btncredit">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="846709635298026">
+            <conditions>
+                <condition id="3" name="On touched object" sid="429309986838114" type="Touch">
+                    <param id="0" name="Object">btnplay</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="375046097465435" type="System">
+                    <param id="0" name="Layout">guide</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="607717891724973">
+            <conditions>
+                <condition id="3" name="On touched object" sid="618820638226624" type="Touch">
+                    <param id="0" name="Object">btncredit</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="552343679703141" type="System">
+                    <param id="0" name="Layout">credit</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="670089230170035">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="865970779374432" type="System" />
+                <condition id="5" inverted="1" name="Is tag playing" sid="592536169201904" type="Audio">
+                    <param id="0" name="Tag">&quot;music&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="737627359464651" type="Audio">
+                    <param id="0" name="Audio file">gamemucsic</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">30</param>
+                    <param id="1" name="Tag (optional)">&quot;music&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

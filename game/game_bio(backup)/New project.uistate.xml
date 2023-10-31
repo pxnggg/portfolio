@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="0">main</layout>
+        <layout order="1">ingame</layout>
+        <layout order="3">login</layout>
+        <layout order="4">credit</layout>
+        <layout order="5">test</layout>
+        <layout order="6">cave</layout>
+        <event-sheet active="1" order="2">ingame</event-sheet>
+        <event-sheet order="7">main</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1" />
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/boat1/" />
+        <folder expanded="1" path="animation-folder/bom2/" />
+        <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/Sprite6/" />
+        <folder expanded="1" path="animation-folder/Sprite8/" />
+        <folder expanded="1" path="animation-folder/Sprite5/" />
+        <folder expanded="1" path="animation-folder/Sprite7/" />
+        <folder expanded="1" path="animation-folder/Sprite4/" />
+        <folder expanded="1" path="animation-folder/tab1/" />
+        <folder expanded="1" path="animation-folder/Sprite9/" />
+        <folder expanded="1" path="animation-folder/thorn1/" />
+        <folder expanded="1" path="animation-folder/Sprite11/" />
+        <folder expanded="1" path="animation-folder/coin1/" />
+        <folder expanded="1" path="animation-folder/tab2/" />
+        <folder expanded="1" path="animation-folder/Sprite3/" />
+        <folder expanded="1" path="animation-folder/coin2/" />
+        <folder expanded="1" path="animation-folder/showwhite/" />
+        <folder expanded="1" path="animation-folder/showpink/" />
+        <folder expanded="1" path="animation-folder/btnplay/" />
+        <folder expanded="1" path="animation-folder/showlogin/" />
+        <folder expanded="1" path="animation-folder/showlogin2/" />
+        <folder expanded="1" path="animation-folder/btnconfirm/" />
+        <folder expanded="1" path="animation-folder/coin3/" />
+        <folder expanded="1" path="animation-folder/coin4/" />
+        <folder expanded="1" path="animation-folder/coin5/" />
+        <folder expanded="1" path="animation-folder/Sprite10/" />
+        <folder expanded="1" path="animation-folder/tabL1/" />
+        <folder expanded="1" path="animation-folder/tabL2/" />
+        <folder expanded="1" path="animation-folder/Sprite12/" />
+        <folder expanded="1" path="animation-folder/Sprite13/" />
+        <folder expanded="1" path="animation-folder/Sprite14/" />
+        <folder expanded="1" path="animation-folder/Sprite15/" />
+        <folder expanded="1" path="animation-folder/coin6/" />
+        <folder expanded="1" path="animation-folder/tab3/" />
+        <folder expanded="1" path="animation-folder/Sprite16/" />
+        <folder expanded="1" path="animation-folder/Sprite17/" />
+        <folder expanded="1" path="animation-folder/ova/" />
+        <folder expanded="1" path="animation-folder/ova2/" />
+        <folder expanded="1" path="animation-folder/q1/" />
+        <folder expanded="1" path="animation-folder/q1C1/" />
+        <folder expanded="1" path="animation-folder/q1C2/" />
+        <folder expanded="1" path="animation-folder/q1C3/" />
+        <folder expanded="1" path="animation-folder/q1C4/" />
+        <folder expanded="1" path="animation-folder/q2/" />
+        <folder expanded="1" path="animation-folder/q2C1/" />
+        <folder expanded="1" path="animation-folder/q2C2/" />
+        <folder expanded="1" path="animation-folder/q2C3/" />
+        <folder expanded="1" path="animation-folder/q2C4/" />
+        <folder expanded="1" path="animation-folder/q3/" />
+        <folder expanded="1" path="animation-folder/q3C1/" />
+        <folder expanded="1" path="animation-folder/q3C2/" />
+        <folder expanded="1" path="animation-folder/q3C3/" />
+        <folder expanded="1" path="animation-folder/q3C4/" />
+        <folder expanded="1" path="animation-folder/q4/" />
+        <folder expanded="1" path="animation-folder/q4C1/" />
+        <folder expanded="1" path="animation-folder/q4C2/" />
+        <folder expanded="1" path="animation-folder/q4C3/" />
+        <folder expanded="1" path="animation-folder/q4C4/" />
+        <folder expanded="1" path="animation-folder/q5/" />
+        <folder expanded="1" path="animation-folder/q5c1/" />
+        <folder expanded="1" path="animation-folder/q5c2/" />
+        <folder expanded="1" path="animation-folder/q5c3/" />
+        <folder expanded="1" path="animation-folder/q5c4/" />
+        <folder expanded="1" path="animation-folder/q6/" />
+        <folder expanded="1" path="animation-folder/q6c1/" />
+        <folder expanded="1" path="animation-folder/q6c2/" />
+        <folder expanded="1" path="animation-folder/q6c3/" />
+        <folder expanded="1" path="animation-folder/q6c4/" />
+        <folder expanded="1" path="animation-folder/end1/" />
+        <folder expanded="1" path="animation-folder/textname/" />
+        <folder expanded="1" path="animation-folder/coin7/" />
+        <folder expanded="1" path="animation-folder/Sprite2/" />
+        <folder expanded="1" path="animation-folder/tab4/" />
+        <folder expanded="1" path="animation-folder/tab5/" />
+        <folder expanded="1" path="animation-folder/Sprite18/" />
+        <folder expanded="1" path="animation-folder/flag/" />
+        <folder expanded="1" path="animation-folder/flag2/" />
+        <folder expanded="1" path="animation-folder/flag3/" />
+        <folder expanded="1" path="animation-folder/doorcave/" />
+        <folder expanded="1" path="animation-folder/Sprite19/" />
+        <folder expanded="1" path="animation-folder/Sprite20/" />
+        <folder expanded="1" path="animation-folder/lava/" />
+        <folder expanded="1" path="animation-folder/lava2/" />
+        <folder expanded="1" path="animation-folder/Sprite21/" />
+        <folder expanded="1" path="animation-folder/coin8/" />
+        <folder expanded="1" path="animation-folder/coin9/" />
+        <folder expanded="1" path="animation-folder/coin10/" />
+        <folder expanded="1" path="animation-folder/tab6/" />
+        <folder expanded="1" path="animation-folder/lavagif/" />
+        <folder expanded="1" path="animation-folder/Sprite22/" />
+        <folder expanded="1" path="animation-folder/Sprite23/" />
+        <folder expanded="1" path="animation-folder/Sprite24/" />
+        <folder expanded="1" path="animation-folder/Sprite25/" />
+        <folder expanded="1" path="animation-folder/q7/" />
+        <folder expanded="1" path="animation-folder/q7c1/" />
+        <folder expanded="1" path="animation-folder/q7c2/" />
+        <folder expanded="1" path="animation-folder/q8/" />
+        <folder expanded="1" path="animation-folder/q8c4/" />
+        <folder expanded="1" path="animation-folder/q8c5/" />
+        <folder expanded="1" path="animation-folder/q9/" />
+        <folder expanded="1" path="animation-folder/q9c2/" />
+        <folder expanded="1" path="animation-folder/q9c1/" />
+        <folder expanded="1" path="animation-folder/Sprite26/" />
+        <folder expanded="1" path="animation-folder/q10/" />
+        <folder expanded="1" path="animation-folder/q10c1/" />
+        <folder expanded="1" path="animation-folder/q10c2/" />
+        <folder expanded="1" path="animation-folder/Sprite27/" />
+        <folder expanded="1" path="animation-folder/btncredit/" />
+        <folder expanded="1" path="animation-folder/Sprite28/" />
+        <folder expanded="1" path="animation-folder/btnhome/" />
+        <folder expanded="1" path="animation-folder/guide/" />
+        <folder expanded="1" path="animation-folder/btnnext/" />
+        <folder expanded="1" path="animation-folder/btnback/" />
+        <folder expanded="1" path="animation-folder/mobilemain/" />
+        <folder expanded="1" path="animation-folder/mobile/" />
+        <folder expanded="1" path="animation-folder/com/" />
+        <folder expanded="1" path="animation-folder/a/" />
+        <folder expanded="1" path="animation-folder/w/" />
+        <folder expanded="1" path="animation-folder/d/" />
+        <folder expanded="1" path="animation-folder/a1/" />
+        <folder expanded="1" path="animation-folder/w1/" />
+        <folder expanded="1" path="animation-folder/d1/" />
+    </folders-expanded>
+</c2uistate>
